@@ -2,8 +2,7 @@ version: "3.8"
 
 services: 
   charlicoder:
-    build:
-    context: .
+    build: .
     volumes:
       - .:/home/charlicoder/app
     ports:
@@ -18,7 +17,7 @@ services:
     env_file:
       - db.env
     volumes:
-      - ./data/pgdata:/var/lib/postgresql/data
+      - ./data/db:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     container_name: charlicoder_db_container
