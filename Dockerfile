@@ -18,7 +18,7 @@ RUN mkdir -p /opt/app && \
 WORKDIR /opt/app
 
 
-COPY requirements.txt entrypoint.sh /opt/app
+COPY requirements.txt entrypoint.sh /opt/app/
 RUN pip install --upgrade pip && \
 	pip install -r requirements.txt
 
@@ -26,7 +26,7 @@ RUN pip install --upgrade pip && \
 COPY . .
 
 # start server
-EXPOSE 80
+EXPOSE 8050
 
 
 # gunicorn core.wsgi --user www-data --bind 0.0.0.0:8050
