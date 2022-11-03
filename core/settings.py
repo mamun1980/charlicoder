@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'django_s3_storage'
+    # 'django_s3_storage'
 
     # 'behave_django',
 ]

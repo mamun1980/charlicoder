@@ -18,7 +18,7 @@ RUN mkdir -p /opt/app && \
 WORKDIR /opt/app
 
 
-COPY requirements.txt .
+COPY requirements.txt entrypoint.sh /opt/app
 RUN pip install --upgrade pip && \
 	pip install -r requirements.txt
 
@@ -26,14 +26,14 @@ RUN pip install --upgrade pip && \
 COPY . .
 
 # start server
-EXPOSE 8050
+EXPOSE 80
 
 
 # gunicorn core.wsgi --user www-data --bind 0.0.0.0:8050
 # gunicorn core.asgi:application -k uvicorn.workers.UvicornWorker
 
-RUN chmod +x /opt/app/entrypoint.sh
+RUN chmod +x entrypoint.sh
 
 
-ENTRYPOINT ["/opt/app/entrypoint.sh"]
-# ENTRYPOINT ["sh", "/opt/app/entrypoint.sh"]
+#ENTRYPOINT ["/opt/app/entrypoint.sh"]
+ENTRYPOINT ["sh", "-c", "/opt/app/entrypoint.sh"]
