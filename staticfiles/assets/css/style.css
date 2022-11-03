@@ -1,0 +1,24 @@
+.header-menu {
+    background-color: #19444b !important;
+}
+
+.header-intro-resume{
+    height:320px
+}
+.header-intro-resume .container{
+    max-width:1000px
+}
+.download-resume{
+    right:15px;
+    top:0
+}
+
+.header-intro{
+        text-align:center
+    }
+.download-resume{
+    position:static !important
+}
+.header-intro-resume{
+    height:auto
+}

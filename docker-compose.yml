@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  charlicoder:
+    build: .
+    environment:
+      - VIRTUAL_HOST=dbusinessapiv3.ekkbaz.com
+      - VIRTUAL_PORT=8050
+      - LETSENCRYPT_HOST=dbusinessapiv3.ekkbaz.com
+      - LETSENCRYPT_EMAIL=dev.acct@ekkbaz.com
+    volumes:
+      - .:/opt/app
+    ports:
+      - 8050:8050
+    image: charlicoder:1.0
+    container_name: charlicoder
+    restart: always
+    command: python manage.py runserver 0.0.0.0:6000

@@ -1,0 +1,24 @@
+version: "3.8"
+
+services: 
+  charlicoder:
+    build: .
+    volumes:
+      - .:/home/charlicoder/app
+    ports:
+      - 6000:6000
+    image: charlicoder:docker_app
+    container_name: charlicoder_container
+    command: python manage.py runserver 0.0.0.0:6000
+  #   depends_on: 
+  #     - db
+  # db:
+  #   image: postgres:13.4-buster
+  #   env_file:
+  #     - db.env
+  #   volumes:
+  #     - ./data/db:/var/lib/postgresql/data
+  #   ports:
+  #     - "8432:5432"
+  #   container_name: charlicoder_db_container
+  #   restart: always
