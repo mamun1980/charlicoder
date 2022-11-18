@@ -1,4 +1,4 @@
-FROM python:3.9.15-bullseye
+FROM python:3.9.15-slim-bullseye
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
@@ -28,7 +28,7 @@ COPY . .
 # start server
 EXPOSE 8050
 
-
+# CMD [ "gunicorn core.wsgi --user www-data --bind 0.0.0.0:8010 --workers 2" ]
 # gunicorn core.wsgi --user www-data --bind 0.0.0.0:8050
 # gunicorn core.asgi:application -k uvicorn.workers.UvicornWorker
 
