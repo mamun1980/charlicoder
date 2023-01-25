@@ -51,6 +51,6 @@ def register_user(request):
         else:
             msg = 'Form is not valid'
     else:
-        form = SignUpForm()
+        form = RegisterForm()
 
-    return render(request, "accounts/register.html", {"form": form, "msg": msg, "success": success})
+    return render(request, "users/accounts/register.html", {"form": form, "msg": msg, "success": success})

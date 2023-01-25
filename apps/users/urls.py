@@ -6,10 +6,10 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('login/', login_view, name="login"),
-    # path('register/', register_user, name="register"),
+    path('register/', register_user, name="register"),
     # path("logout/", LogoutView.as_view(), name="logout"),
 
 
     # path('login/', TemplateView.as_view(template_name="account/login.html"), name='login'),
-    path('register/', TemplateView.as_view(template_name="account/register.html"), name='register'),
+    # path('register/', TemplateView.as_view(template_name="users/accounts/register.html"), name='register'),
 ]

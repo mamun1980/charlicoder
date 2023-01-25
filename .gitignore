@@ -1,5 +1,7 @@
 .env/*
 .venv/*
 venv_*/*
+venv/
+aws_keys/
 *.pyc
 */__pycache__/*
