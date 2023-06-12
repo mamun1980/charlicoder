@@ -2179,7 +2179,7 @@ social:
     - user-circle
     - user-friends
     - user-plus
-    - users
+    - charliauth
     - video
   label: Social
 spinners:
@@ -2464,9 +2464,9 @@ users-people:
     - user-tag
     - user-tie
     - user-times
-    - users
-    - users-cog
-    - users-slash
+    - charliauth
+    - charliauth-cog
+    - charliauth-slash
     - walking
     - wheelchair
   label: Users & People

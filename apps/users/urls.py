@@ -11,5 +11,5 @@ urlpatterns = [
 
 
     # path('login/', TemplateView.as_view(template_name="account/login.html"), name='login'),
-    # path('register/', TemplateView.as_view(template_name="users/accounts/register.html"), name='register'),
+    # path('register/', TemplateView.as_view(template_name="charliauth/accounts/register.html"), name='register'),
 ]

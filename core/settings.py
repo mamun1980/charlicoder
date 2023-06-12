@@ -12,12 +12,6 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
-    # 'material',
-    # 'material.admin',
-    'apps.users',
-    'apps.resume',
-    # 'apps.sonic',
-
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -25,12 +19,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'rest_framework',
     # 'django_s3_storage'
-
     # 'behave_django',
+
+    # 'apps.charliauth',
+    'apps.resume',
+    'apps.charliauth',
+    # 'apps.sonic',
 ]
 
-AUTH_USER_MODEL = 'users.User'
+# AUTH_USER_MODEL = 'charliauth.User'
 
 
 MIDDLEWARE = [
@@ -72,7 +71,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'data/db2.sqlite3',
+        'NAME': BASE_DIR / 'data/db3.sqlite3',
     }
 }
 
@@ -151,48 +150,3 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-# ==================== MATERIAL_ADMIN_SITE settings =================
-# MATERIAL_ADMIN_SITE = {
-#     'HEADER':  _('The Charlicoder'),  # Admin site header
-#     'TITLE':  _('Charlicoder'),  # Admin site title
-#     'FAVICON':  '',  # Admin site favicon (path to static should be specified)
-#     'MAIN_BG_COLOR':  'color',  # Admin site main color, css color should be specified
-#     'MAIN_HOVER_COLOR':  'color',  # Admin site main hover color, css color should be specified
-#     'PROFILE_PICTURE':  'path/to/image',  # Admin site profile picture (path to static should be specified)
-#     'PROFILE_BG':  'path/to/image',  # Admin site profile background (path to static should be specified)
-#     'LOGIN_LOGO':  'path/to/image',  # Admin site logo on login page (path to static should be specified)
-#     'LOGOUT_BG':  'path/to/image',  # Admin site background on login/logout pages (path to static should be specified)
-#     'SHOW_THEMES':  True,  #  Show default admin themes button
-#     'TRAY_REVERSE': True,  # Hide object-tools and additional-submit-line by default
-#     'NAVBAR_REVERSE': True,  # Hide side navbar by default
-#     'SHOW_COUNTS': True, # Show instances counts for each model
-#     'APP_ICONS': {  # Set icons for applications(lowercase), including 3rd party apps, {'application_name': 'material_icon_name', ...}
-#         'sites': 'send',
-#     },
-#     'MODEL_ICONS': {  # Set icons for models(lowercase), including 3rd party models, {'model_name': 'material_icon_name', ...}
-#         'site': 'contact_mail',
-#     }
-# }
-
-
-
-# Settings for All Types of Testing tools
-
-# TEST_RUNNER = 'behave_django.runner.BehaviorDrivenTestRunner'
-
-# INSTALLED_APPS += [
-
-#     'apps.bdd',
-# ]
-
-
-
-#S3_BUCKET_NAME = "zappa-w5jfdhyku"
-#STATICFILES_STORAGE = "django_s3_storage.storage.StaticS3Storage"
-#AWS_S3_BUCKET_NAME_STATIC = S3_BUCKET_NAME
-# serve the static files directly from the specified s3 bucket
-#AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % S3_BUCKET_NAME
-#STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
-# if you have configured a custom domain for your static files use:
-#AWS_S3_PUBLIC_URL_STATIC = "https://static.yourdomain.com/"
