@@ -1,6 +1,7 @@
 from pathlib import Path
 from decouple import config
 from django.utils.translation import gettext_lazy as _
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config('SECRET_KEY', default='S#perS3crEt_1122')
@@ -18,18 +19,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
 
-    'rest_framework',
-    # 'django_s3_storage'
-    # 'behave_django',
+    'phonenumber_field',
+    'django_countries',
+    'ckeditor',
+    'ckeditor_uploader',
 
-    # 'apps.charliauth',
+    'apps.charliuser',
     'apps.resume',
-    'apps.charliauth',
-    # 'apps.sonic',
 ]
 
-# AUTH_USER_MODEL = 'charliauth.User'
+AUTH_USER_MODEL = 'charliuser.CharliUser'
 
 
 MIDDLEWARE = [
@@ -71,7 +73,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'data/db3.sqlite3',
+        'NAME': BASE_DIR / 'data/db.sqlite3',
     }
 }
 
@@ -129,6 +131,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+SITE_ID = 1
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
@@ -143,7 +146,10 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = 'media/'
 
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = BASE_DIR / 'public/media'
+
+# ckeditor upload path
+CKEDITOR_UPLOAD_PATH = "uploads/avatar"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

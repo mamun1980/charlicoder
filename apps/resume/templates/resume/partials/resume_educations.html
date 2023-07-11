@@ -1,0 +1,12 @@
+
+<div class="resume-section-content">
+	<ul class="list-unstyled">
+		{% for edu in educations %}
+		    <li class="mb-2">
+		        <div class="resume-degree font-weight-bold">{{ edu.title }}</div>
+		        <div class="resume-degree-org">{{ edu.institute_name }}</div>
+		        <div class="resume-degree-time">{{ edu.enroll_year }} - {{ edu.passing_year }}</div>
+		    </li>
+	    {% endfor %}
+	</ul>
+</div>

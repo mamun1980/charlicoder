@@ -1,12 +1,14 @@
 .env/*
-.venv/*
+.venv
+.vscode
 venv_*/*
 venv/
 aws_keys/
 *.pyc
-*/__pycache__/*
+*/__pycache__
 
 **/.DS_Store
 .idea
 
-data/*
+data
+public
