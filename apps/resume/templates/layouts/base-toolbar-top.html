@@ -1,0 +1,19 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+    {% block stylesheets %}
+    {% endblock stylesheets %}
+
+{% block body %}
+    <main>
+        <div id="wrapper">
+            {% include 'partials/header.html' %}
+            
+            {% block content %}
+            {% endblock content %}
+            
+        </div>
+    </main>
+{% endblock body %}
+
+{% block javascripts %}{% endblock javascripts %}

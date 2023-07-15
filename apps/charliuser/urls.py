@@ -4,6 +4,8 @@ from django.contrib.auth.views import LogoutView
 
 from .views import SignUpView, SignInView
 
+# app_name = 'charliuser'
+
 urlpatterns = [
     path('login/', SignInView.as_view(), name='login'),
     path('register/', SignUpView.as_view(), name='register'),

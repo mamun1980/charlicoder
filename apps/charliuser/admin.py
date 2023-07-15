@@ -9,20 +9,19 @@ class CustomUserAdmin(UserAdmin):
     add_form = CharliUserCreationForm
     form = CharliUserChangeForm
     model = CharliUser
-    list_display = ("email", "mobile", "is_staff", "is_active",)
-    list_filter = ("email", "mobile", "is_staff", "is_active",)
+    list_display = ("email", "is_staff", "is_active",)
+    list_filter = ("email", "is_staff", "is_active",)
     fieldsets = (
-        (None, {"fields": ("email", "mobile", "password")}),
-        ("Bio", {"fields": ("first_name", "last_name")}),
+        (None, {"fields": ("email", "password")}),
         ("Permissions", {"fields": ("is_staff",
-         "is_active",  "user_permissions")}),
+         "is_active", "groups", "user_permissions")}),
     )
     add_fieldsets = (
         (None, {
             "classes": ("wide",),
             "fields": (
-                "email", "mobile", "password1", "password2", "is_staff",
-                "is_active", "user_permissions"
+                "email", "password1", "password2", "is_staff",
+                "is_active", "groups", "user_permissions"
             )}
          ),
     )

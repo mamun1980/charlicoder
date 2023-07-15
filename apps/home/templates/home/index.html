@@ -1,0 +1,16 @@
+{% extends "layouts/base-toolbar-top.html" %}
+{% load i18n %}
+
+{% block content %}
+<h1>{% translate 'Hello' %}</h1>
+<p>{{ title }}</p>
+
+{% if request.user.is_authenticated %}
+
+    {{ user }}
+{% else %}
+    no user
+{% endif %}
+
+
+{% endblock content %}

@@ -1,10 +1,10 @@
 {% extends "charliuser/layouts/base.html" %}
 {% load static %}
+{% load socialaccount %}
+
 
 {% block stylesheets %}
-<style type="text/css">
 
-</style>
 
 {% endblock stylesheets %}
 
@@ -15,11 +15,12 @@
 
         <div class="title mt-4 mb-8">Log in to your account</div>
 
-        <form name="loginForm" novalidate>
+        <form name="loginForm" method="POST" action="{% url 'login' %}" novalidate>
+            {% csrf_token %}
 
             <div class="form-group mb-4">
-                <input type="email" class="form-control" name="email" id="loginFormInputEmail" aria-describedby="" placeholder=" " />
-                <label for="loginFormInputEmail">Email/Username</label>
+                <input type="text" class="form-control" name="username" id="loginFormInputEmail" aria-describedby="" placeholder=" " />
+                <label for="loginFormInputEmail">Email or Phone Number</label>
             </div>
 
             <div class="form-group mb-4">
@@ -60,7 +61,8 @@
         <button type="submit" class="facebook btn btn-block btn-secondary my-2 mx-auto" aria-label="LOG IN">
             <span>
                 <i class="icon-facebook s-4"></i>
-                <span>Log in with Facebook</span>
+                
+                <a href="{% provider_login_url 'facebook' method='oauth2' %}"><span>Log in with Facebook</span></a>
             </span>
         </button>
 

@@ -1,0 +1,26 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block body %}
+    <main>
+        <div id="wrapper">
+
+            <div class="content-wrapper">
+
+                <div class="content custom-scrollbar">
+
+                    <div class="page-layout blank p-6">
+
+                        {% block content %}
+                        {% endblock content %}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+{% endblock body %}

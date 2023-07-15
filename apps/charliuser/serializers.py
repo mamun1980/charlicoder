@@ -6,7 +6,7 @@ from .models import CharliUser
 class CharliUserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = CharliUser
-        fields = ['url', 'username', 'email', 'groups']
+        fields = ['url', 'mobile', 'email', 'groups']
 
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):

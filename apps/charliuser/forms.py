@@ -6,15 +6,15 @@ class CharliUserCreationForm(UserCreationForm):
 
     class Meta:
         model = CharliUser
-        fields = ("email", "first_name", "last_name")
+        fields = ("email",  "first_name", "last_name")
 
 
 class CharliUserChangeForm(UserChangeForm):
 
     class Meta:
         model = CharliUser
-        fields = ("email", "first_name", "last_name")
-        
+        fields = ("email", "first_name", "last_name", "mobile")
+
 
 # class SignUpForm(UserCreationForm):
 
